@@ -1,9 +1,10 @@
-  <mat-toolbar class="crypto-header">
-    <span>CRYPTO INFO</span>
-    <span class="spacer">CRYPTO INFO</span>
-    <mat-form-field>
-      <mat-select [(value)]="selectedCurrency" (valueChange)="onCurrencyChange($event)" class="text-sm">
-        <mat-option [value]="option.value" *ngFor="let option of currencies">{{option.viewValue}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-toolbar>
+<p><mat-toolbar class="crypto-header">
+  <span>CRYPTO INFO</span>
+  <span class="spacer">CRYPTO INFO</span>
+  <mat-form-field>
+    <mat-select [(value)]="selectedCurrency" (valueChange)="onCurrencyChange($event)" class="text-sm">
+      <mat-option [value]="option.value" *ngFor="let option of currencies">{{option.viewValue}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar></p>
+<router-outlet></router-outlet>
