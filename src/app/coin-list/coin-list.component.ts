@@ -11,7 +11,15 @@ import {CommonModule} from "@angular/common";
     CommonModule
   ]
 })
-export class CoinListComponent {
+export class CoinListComponent implements OnInit {
+  bannerData: any;
+  constructor(private apiService: ApiService) {
+  }
+
+  ngOnInit() {
+    this.getBannerData();
+    this.getAllData();
+  }
 
   getBannerData() {
     this.apiService.getTrendingCurrency("EUR")

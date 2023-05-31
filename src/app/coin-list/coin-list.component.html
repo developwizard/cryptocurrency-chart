@@ -1,1 +1,39 @@
-<p>coin-list works!</p>
+<div class="banner">
+  <div class="container">
+    <div class="header">
+      <h2>CRYPTO INFO</h2>
+      <h6>Check all cryptocurrencies update</h6>
+    </div>
+    <div class="sub-header">
+      <marquee
+        [behavior]="'scroll'"
+        onmouseover="stop()"
+        onmouseout="start()"
+        [loop]="'-1'"
+        [direction]="'left'">
+        <div class="row">
+          <ng-container *ngFor="let row of bannerData">
+            <div class="col-2">
+              <div class="card">
+                <img [src]="row.image" width="100" class="img-fluid" alt="cryptocurrency">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    {{row.symbol | uppercase}}
+                    <span class="text-danger">
+                      {{row.market_cap_change_percentage_24h}}%
+                    </span>
+                  </h5>
+                  <p class="card-text">{{row.current_price | currency: "EUR"}}</p>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </marquee>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+
+</div>
