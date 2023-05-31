@@ -11,17 +11,19 @@ import {FormsModule} from "@angular/forms";
 import {CoinListComponent} from './coin-list/coin-list.component';
 import {CoinDetailComponent} from './coin-detail/coin-detail.component';
 import {AppRoutingModule} from "./app-routing.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoinListComponent,
-    CoinDetailComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    CoinListComponent,
+    CoinDetailComponent,
+    HttpClientModule,
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
