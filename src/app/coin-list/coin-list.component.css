@@ -1,3 +1,17 @@
+:host ::ng-deep .mat-mdc-sort-header-content,
+.no-data {
+  color: #fff;
+}
+:host ::ng-deep .mat-mdc-paginator-outer-container {
+  background-color: rgb(36, 37, 37);
+}
+:host ::ng-deep tr.mat-mdc-header-row {
+  background-color: #009688;
+}
+:host ::ng-deep tr.mat-mdc-header-row {
+  height: 70px;
+}
+
 .header {
   height: 40%;
   display: flex;
@@ -51,5 +65,17 @@
 }
 .card p {
   font-weight: 700;
+}
 
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
 }
