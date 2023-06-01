@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {CurrencyService} from "./service/currency.service";
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,13 @@ export class AppComponent {
     {value: 'eur', viewValue: "EUR"},
     {value: 'usd', viewValue: "USD"}
   ];
-  selectedCurrency = this.currencies[0].value;
+  selectedCurrency: string = this.currencies[0].value;
 
-  constructor() {
+  constructor(private currencyService: CurrencyService) {
   }
-  onCurrencyChange(value: string) {
 
+  onCurrencyChange(value: string) {
+    this.currencyService.seCurrency(value);
   }
 }
 
