@@ -58,11 +58,11 @@ export class CoinDetailComponent implements OnInit {
     this.route.params.subscribe(val => {
       this.coinId = val['id'];
       this.getCoinData();
-      this.getGraphData();
+      this.getGraphData(this.days);
       this.currencyService.getCurrency().subscribe(currency => {
         this.currency = currency;
         this.getCoinData();
-        this.getGraphData();
+        this.getGraphData(this.days);
       });
     });
   }
@@ -78,7 +78,8 @@ export class CoinDetailComponent implements OnInit {
       });
   }
 
-  getGraphData() {
+  getGraphData(days: number) {
+    this.days = days;
     this.apiService.getCurrencyChartData(this.coinId, this.currency, this.days)
       .subscribe(res => {
         setTimeout(() => {
